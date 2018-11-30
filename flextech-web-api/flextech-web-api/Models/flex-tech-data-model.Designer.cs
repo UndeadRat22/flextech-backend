@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\juliu\source\repos\UndeadRat22\flextech-backend\flextech-web-api\flextech-web-api\Models\flextech-data-model.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\juliu\Source\Repos\UndeadRat22\flextech-backend\flextech-web-api\flextech-web-api\Models\flex-tech-data-model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

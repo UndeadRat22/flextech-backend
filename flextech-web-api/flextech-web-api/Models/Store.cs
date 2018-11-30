@@ -15,6 +15,6 @@ namespace flextech_web_api.Models
     public partial class Store
     {
         public int ID { get; set; }
-        public string Brand { get; set; }
+        public string Name { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace flextech_web_api.Models
     public partial class FlextechDatabaseContext : DbContext
     {
         public FlextechDatabaseContext()
-            : base("name=Entities")
+            : base("name=FlextechDatabaseContext")
         {
         }
     
@@ -25,7 +25,7 @@ namespace flextech_web_api.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Purchase> Purchases { get; set; }
+        public virtual DbSet<ReceiptItem> ReceiptItems { get; set; }
         public virtual DbSet<Store> Stores { get; set; }
         public virtual DbSet<User> Users { get; set; }
     }

@@ -12,14 +12,12 @@ namespace flextech_web_api.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Purchase
+    public partial class ReceiptItem
     {
         public int ID { get; set; }
-        public Nullable<int> UserID { get; set; }
-        public string Date { get; set; }
-        public string ProductName { get; set; }
-        public Nullable<int> Count { get; set; }
-        public string Store { get; set; }
+        public Nullable<int> Name { get; set; }
+        public string Quantity { get; set; }
         public Nullable<decimal> Price { get; set; }
+        public Nullable<int> ReceiptID { get; set; }
     }
 }
