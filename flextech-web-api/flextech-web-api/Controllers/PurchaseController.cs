@@ -17,5 +17,13 @@ namespace flextech_web_api.Controllers
                 return db.Purchases.ToList();
             }
         }
+
+        public Purchase GetPurchasesByID(int id)
+        {
+            using (var db = new FlextechDatabaseContext())
+            {
+                return db.Purchases.FirstOrDefault(p => p.ID == id);
+            }
+        }
     }
 }
