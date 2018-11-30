@@ -328,3 +328,4 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/flextech-web-api/flextech-web-api/ConnectionStrings.config
