@@ -12,13 +12,13 @@ namespace flextech_web_api.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return new string[] { "hhhhhhhhhhh", "ddd" };
         }
 
         // GET api/values/5
         public string Get(int id)
         {
-            return "value";
+            return "ssssss";
         }
 
         // POST api/values
