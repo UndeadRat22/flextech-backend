@@ -15,6 +15,15 @@
           <Property Name="Price" Type="decimal" Precision="5" Scale="2" />
           <Property Name="ReceiptID" Type="int" />
         </EntityType>
+        <EntityType Name="Receipts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="StoreID" Type="int" />
+          <Property Name="Date" Type="varchar" MaxLength="50" />
+          <Property Name="UserID" Type="int" />
+        </EntityType>
         <EntityType Name="Stores">
           <Key>
             <PropertyRef Name="ID" />
@@ -32,6 +41,7 @@
         </EntityType>
         <EntityContainer Name="FlextechDatabaseModelStoreContainer">
           <EntitySet Name="ReceiptItems" EntityType="Self.ReceiptItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Receipts" EntityType="Self.Receipts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Stores" EntityType="Self.Stores" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -68,7 +78,17 @@
           <EntitySet Name="ReceiptItems" EntityType="Self.ReceiptItem" />
           <EntitySet Name="Stores" EntityType="Self.Store" />
           <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Receipts" EntityType="FlextechDatabaseModel.Receipt" />
         </EntityContainer>
+        <EntityType Name="Receipt">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="StoreID" Type="Int32" />
+          <Property Name="Date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserID" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -100,6 +120,16 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Receipts">
+            <EntityTypeMapping TypeName="FlextechDatabaseModel.Receipt">
+              <MappingFragment StoreEntitySet="Receipts">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -188,6 +188,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>flex-tech-data-model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Receipt.cs">
+      <DependentUpon>flex-tech-data-model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ReceiptItem.cs">
       <DependentUpon>flex-tech-data-model.tt</DependentUpon>
     </Compile>

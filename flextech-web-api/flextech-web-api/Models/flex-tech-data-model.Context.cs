@@ -28,5 +28,6 @@ namespace flextech_web_api.Models
         public virtual DbSet<ReceiptItem> ReceiptItems { get; set; }
         public virtual DbSet<Store> Stores { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Receipt> Receipts { get; set; }
     }
 }
