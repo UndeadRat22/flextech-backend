@@ -3,6 +3,7 @@ using ShopSnapWebApi.Models;
 using ShopSnapWebApi.Services.Abstract;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using ShopSnapWebApi.DataMaps;
 
 namespace ShopSnapWebApi.Services
 {
@@ -25,6 +26,8 @@ namespace ShopSnapWebApi.Services
             foreach (var result in response.ParsedResults)
             {
                 text = result.ParsedText;
+                text = ReplaceCorruptedValues(text);
+
                 FoundItem item = new FoundItem();
 
                 string[] splits = { "\n", "\r" };
@@ -32,6 +35,7 @@ namespace ShopSnapWebApi.Services
             }
             return GetItemStringArray(lines);
         }
+
         private string[] GetItemStringArray(string[] allLines){
             int startIndex = GetPatternIndex(allLines, _pvmLinePattern);
             string[] temp = allLines.SubArray(startIndex + 1, allLines.Length - startIndex - 1);
@@ -39,6 +43,7 @@ namespace ShopSnapWebApi.Services
             string[] result = temp.SubArray(0, endIndex);
             return result;
         }
+
         private int GetPatternIndex(string[] allLines, string pattern)
         {
             int index = 0;
@@ -53,7 +58,7 @@ namespace ShopSnapWebApi.Services
             }
             return index;
         }
-        //private List<string> TryGetNormalLines(string parsed)
+
         private List<string> TryGetLinesWithQuotes(string parsed)
         {
             List<string> matches = new List<string>();
@@ -62,6 +67,15 @@ namespace ShopSnapWebApi.Services
                 matches.Add(match.Value);
             }
             return matches;
+        }
+
+        private string ReplaceCorruptedValues(string originalString)
+        {
+            foreach(var corruptedPair in CorruptedWords.words) {
+                originalString = originalString.Replace(corruptedPair.Key, corruptedPair.Value);
+            }
+
+            return originalString;
         }
     }
 }

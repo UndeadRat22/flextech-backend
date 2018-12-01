@@ -15,8 +15,8 @@ namespace ShopSnapWebApi.Controllers
         public async Task<string[]> Post([FromBody]string base64image)
         {
             var resp = await _service.GetStringFromImage(base64image);
+
             return _parseService.GetReceiptItems(resp);
-            //return resp;
         }
     }
 }
