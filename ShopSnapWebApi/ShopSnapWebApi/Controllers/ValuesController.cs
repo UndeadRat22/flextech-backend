@@ -9,24 +9,14 @@ namespace ShopSnapWebApi.Controllers
     public class ValuesController : ApiController
     {
         private ReceiptOcrApiService _service = new ReceiptOcrApiService();
-
-        // GET api/values
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/values/5
-        public string Get(int id)
-        {
-            return "balls";
-        }
+        private ReceiptParseService _parseService = new ReceiptParseService();
 
         // POST api/values
-        public async Task<OcrResponse> Post([FromBody]string base64image)
+        public async Task<string[]> Post([FromBody]string base64image)
         {
             var resp = await _service.GetStringFromImage(base64image);
-            return resp;
+            return _parseService.GetReceiptItems(resp);
+            //return resp;
         }
     }
 }
