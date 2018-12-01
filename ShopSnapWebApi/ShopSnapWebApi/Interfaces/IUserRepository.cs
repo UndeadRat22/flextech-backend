@@ -6,5 +6,6 @@ namespace ShopSnapWebApi.Controllers
     public interface IUserRepository
     {
         List<User> GetUsers();
+        User GetUserByID(int userID);
     }
 }
