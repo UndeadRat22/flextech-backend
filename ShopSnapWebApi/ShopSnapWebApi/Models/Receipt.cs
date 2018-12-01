@@ -21,11 +21,12 @@ namespace ShopSnapWebApi.Models
         }
     
         public int ID { get; set; }
-        public Nullable<int> StoreID { get; set; }
+        public int StoreID { get; set; }
         public string Date { get; set; }
         public Nullable<int> UserID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ReceiptItem> ReceiptItems { get; set; }
+        public virtual Store Store { get; set; }
     }
 }

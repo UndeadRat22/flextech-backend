@@ -51,6 +51,9 @@ namespace ShopSnapWebApi.Models
             .HasRequired<Receipt>(s => s.Receipt)
             .WithMany(g => g.ReceiptItems)
             .HasForeignKey<int>(s => s.ReceiptID);
+
+            modelBuilder.Entity<Receipt>()
+            .HasRequired<Store>(s => s.Store);
         }
     }
 }
