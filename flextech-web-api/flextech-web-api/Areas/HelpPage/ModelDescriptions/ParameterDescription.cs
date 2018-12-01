@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace flextech_web_api.Areas.HelpPage.ModelDescriptions
+namespace ShopSnap.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterDescription
     {

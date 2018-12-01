@@ -1,12 +1,12 @@
 ﻿using System.Diagnostics;
 using System.Threading.Tasks;
-using flextech_web_api.Models;
+using ShopSnap.Models;
 using Newtonsoft.Json;
 using RestSharp;
 
-namespace flextech_web_api.Services
+namespace ShopSnap.Services
 {
-    public class ReceiptOcrService
+    public class ReceiptOcrApiService
     {
         private string _ocrApiKey = "1d9211ee2788957";
         private string _apiURL = @"https://api.ocr.space/Parse/";

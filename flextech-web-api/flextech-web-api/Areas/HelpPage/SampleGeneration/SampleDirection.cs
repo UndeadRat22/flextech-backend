@@ -1,4 +1,4 @@
-namespace flextech_web_api.Areas.HelpPage
+namespace ShopSnap.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response
