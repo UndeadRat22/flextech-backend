@@ -25,8 +25,7 @@ namespace ShopSnapWebApi.Models
                 .IsUnicode(false);
 
             modelBuilder.Entity<ReceiptItem>()
-                .Property(e => e.Quantity)
-                .IsUnicode(false);
+                .Property(e => e.Quantity);
 
             modelBuilder.Entity<ReceiptItem>()
                 .Property(e => e.Price)
