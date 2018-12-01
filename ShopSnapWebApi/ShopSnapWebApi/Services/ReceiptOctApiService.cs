@@ -33,6 +33,8 @@ namespace ShopSnapWebApi.Services
             request.AddParameter("apikey", _ocrApiKey);
             request.AddParameter("base64Image", "data:image/jpg;base64," + base64);
             request.AddParameter("filetype", "JPG");
+            request.AddParameter("scale", "true");
+            request.AddParameter("isTable", "true");
 
             Task<IRestResponse<string>> resp = client.ExecuteTaskAsync<string>(request);
             return await resp;

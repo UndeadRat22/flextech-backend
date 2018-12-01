@@ -12,10 +12,11 @@ namespace ShopSnapWebApi.Controllers
     {
         public List<User> GetUsers()
         {
-            using(var db = new ShopSnapDatabaseContext())
-            {
-                return db.Users.ToList();
-            }
+            return null;
+            //using(ShopSnapDatabaseContext db = new ShopSnapDatabaseContext())
+            //{
+            //    return db.Users.ToList();
+            //}
         }
     }
 }
