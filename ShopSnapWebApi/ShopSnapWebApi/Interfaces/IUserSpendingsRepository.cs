@@ -8,6 +8,6 @@ namespace ShopSnapWebApi.Interfaces
 {
     public interface IUserSpendingsRepository
     {
-        decimal GetUserAllSpendings(int userID);
+        decimal GetUserAllSpendings(int userID, bool isProductCount = false);
     }
 }

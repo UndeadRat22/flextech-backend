@@ -11,9 +11,10 @@ namespace ShopSnapWebApi.Repositories
     public class UserSpendingsRepository : IUserSpendingsRepository
     {
 
-        public decimal GetUserAllSpendings(int userID)
+        public decimal GetUserAllSpendings(int userID, bool isProductCount = false)
         {
             decimal allSpendings = 0;
+            decimal allProducts = 0;
             using (var db = new ShopSnapDatabaseContext())
             {
                 var userReceipts = db.Receipts.Include("ReceiptItems").Where(r => r.UserID == userID).ToList();
@@ -27,10 +28,14 @@ namespace ShopSnapWebApi.Repositories
                     foreach (var item in receiptItemList)
                     {
                         allSpendings += (decimal)item.Quantity * (decimal)item.Price;
+                        allProducts += (decimal)item.Quantity;
                     }
                 }
 
-                return allSpendings;
+                if (isProductCount)
+                    return allProducts;
+                else
+                    return allSpendings;
             }
         }
 

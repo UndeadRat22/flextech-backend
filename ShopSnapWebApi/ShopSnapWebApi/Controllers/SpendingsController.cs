@@ -17,9 +17,9 @@ namespace ShopSnapWebApi.Controllers
             _userSpendingsRepository = userSpendingsRepository;
         }
 
-        public decimal GetUserAllSpendings(int userID)
+        public decimal GetUserAllSpendings(int userID, bool isProductCount = false)
         {
-            return _userSpendingsRepository.GetUserAllSpendings(userID);
+            return _userSpendingsRepository.GetUserAllSpendings(userID, isProductCount);
         }
     }
 }
