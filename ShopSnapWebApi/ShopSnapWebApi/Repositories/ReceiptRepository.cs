@@ -13,7 +13,8 @@ namespace ShopSnapWebApi.Repositories
         {
             using (var db = new ShopSnapDatabaseContext())
             {
-                return db.Receipts.Include("ReceiptItems").ToList();
+                var list = db.Receipts.Include("ReceiptItems").Include("Store").ToList();
+                return list;
             }
         }
 
@@ -21,7 +22,7 @@ namespace ShopSnapWebApi.Repositories
         {
             using (var db = new ShopSnapDatabaseContext())
             {
-                return db.Receipts.Include("ReceiptItems").Where(r => r.UserID == userID).ToList();
+                return db.Receipts.Include("ReceiptItems").Include("Store").Where(r => r.UserID == userID).ToList();
             }
         }
 

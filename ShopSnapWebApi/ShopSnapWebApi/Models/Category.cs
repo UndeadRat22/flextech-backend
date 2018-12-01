@@ -12,21 +12,18 @@ namespace ShopSnapWebApi.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Receipt
+    public partial class Category
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Receipt()
+        public Category()
         {
-            this.ReceiptItems = new HashSet<ReceiptItem>();
+            this.Products = new HashSet<Product>();
         }
     
         public int ID { get; set; }
-        public int StoreID { get; set; }
-        public string Date { get; set; }
-        public Nullable<int> UserID { get; set; }
+        public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ReceiptItem> ReceiptItems { get; set; }
-        public virtual Store Store { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

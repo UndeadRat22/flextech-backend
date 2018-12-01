@@ -17,6 +17,8 @@ namespace ShopSnapWebApi.Models
         public virtual DbSet<Receipt> Receipts { get; set; }
         public virtual DbSet<Store> Stores { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -51,6 +53,14 @@ namespace ShopSnapWebApi.Models
             .HasRequired<Receipt>(s => s.Receipt)
             .WithMany(g => g.ReceiptItems)
             .HasForeignKey<int>(s => s.ReceiptID);
+
+            modelBuilder.Entity<Product>()
+            .HasRequired<Category>(s => s.Category)
+            .WithMany(g => g.Products)
+            .HasForeignKey<int>(s => s.CategoryID);
+
+            modelBuilder.Entity<Receipt>()
+            .HasRequired<Store>(s => s.Store);
         }
     }
 }
