@@ -7,5 +7,6 @@ namespace ShopSnapWebApi.Controllers
     {
         List<Receipt> GetReceipts();
         List<Receipt> GetReceiptsByUserID(int userID);
+        void CreateReceipt(Receipt receipt);
     }
 }

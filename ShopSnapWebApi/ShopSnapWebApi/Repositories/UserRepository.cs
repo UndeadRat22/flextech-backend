@@ -16,5 +16,13 @@ namespace ShopSnapWebApi.Repositories
                 return db.Users.ToList();
             }
         }
+
+        public User GetUserByID(int userID)
+        {
+            using (var db = new ShopSnapDatabaseContext())
+            {
+                return db.Users.FirstOrDefault(u => u.ID == userID);
+            }
+        }
     }
 }
