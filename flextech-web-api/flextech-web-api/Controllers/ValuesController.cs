@@ -1,5 +1,5 @@
-﻿using flextech_web_api.Models;
-using flextech_web_api.Services;
+﻿using ShopSnap.Models;
+using ShopSnap.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -9,11 +9,11 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace flextech_web_api.Controllers
+namespace ShopSnap.Controllers
 {
     public class ValuesController : ApiController
     {
-        private ReceiptOcrService _service = new ReceiptOcrService();
+        private ReceiptOcrApiService _service = new ReceiptOcrApiService();
 
         // GET api/values
         public IEnumerable<string> Get()

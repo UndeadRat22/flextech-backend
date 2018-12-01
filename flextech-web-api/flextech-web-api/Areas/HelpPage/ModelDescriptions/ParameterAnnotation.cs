@@ -1,6 +1,6 @@
 using System;
 
-namespace flextech_web_api.Areas.HelpPage.ModelDescriptions
+namespace ShopSnap.Areas.HelpPage.ModelDescriptions
 {
     public class ParameterAnnotation
     {

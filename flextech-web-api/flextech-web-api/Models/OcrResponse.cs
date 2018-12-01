@@ -1,4 +1,4 @@
-﻿namespace flextech_web_api.Models
+﻿namespace ShopSnap.Models
 {
     public class OcrResponse
     {

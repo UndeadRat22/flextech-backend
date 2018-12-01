@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace flextech_web_api.Areas.HelpPage
+namespace ShopSnap.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {
