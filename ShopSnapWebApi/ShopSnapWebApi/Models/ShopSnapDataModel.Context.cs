@@ -29,5 +29,7 @@ namespace ShopSnapWebApi.Models
         public virtual DbSet<Receipt> Receipts { get; set; }
         public virtual DbSet<Store> Stores { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
     }
 }

@@ -11,6 +11,9 @@
         <EntityTypeShape EntityType="ShopSnapDataModel.User" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <AssociationConnector Association="ShopSnapDataModel.FK_ReceiptItems_Receipts" ManuallyRouted="false" />
         <AssociationConnector Association="ShopSnapDataModel.FK_Receipts_Stores" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ShopSnapDataModel.Category" Width="1.5" PointX="3" PointY="4.75" />
+        <EntityTypeShape EntityType="ShopSnapDataModel.Product" Width="1.5" PointX="5.375" PointY="4.75" />
+        <AssociationConnector Association="ShopSnapDataModel.FK_Products_Categories" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
