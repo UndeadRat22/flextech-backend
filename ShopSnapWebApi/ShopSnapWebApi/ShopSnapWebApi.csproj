@@ -279,7 +279,7 @@
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Services\Abstract\IReceiptService.cs" />
     <Compile Include="Services\ReceiptOctApiService.cs" />
-    <Compile Include="Services\ReceiptParseService.cs" />
+    <Compile Include="Services\ReceiptServiceIki.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
