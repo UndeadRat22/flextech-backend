@@ -8,6 +8,7 @@ using System.Web.Http;
 using System.Data.Entity;
 
 
+
 namespace ShopSnapWebApi.Controllers
 {
     public class ReceiptController : ApiController
@@ -19,5 +20,14 @@ namespace ShopSnapWebApi.Controllers
                 return db.Receipts.Include("ReceiptItems").ToList();
             }
         }
+
+        public List<Receipt> GetReceiptsByUserID(int userID)
+        {
+            using (var db = new ShopSnapDatabaseContext())
+            {
+                return db.Receipts.Include("ReceiptItems").Where(r => r.UserID == userID).ToList();
+            }
+        }
+
     }
 }
