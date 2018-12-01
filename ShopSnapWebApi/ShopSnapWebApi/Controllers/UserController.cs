@@ -10,12 +10,16 @@ namespace ShopSnapWebApi.Controllers
 {
     public class UserController : ApiController
     {
+        IUserRepository _userRepository;
+
+        public UserController(IUserRepository userRepository)
+        {
+            _userRepository = userRepository;
+        }
+
         public List<User> GetUsers()
         {
-            using(var db = new ShopSnapDatabaseContext())
-            {
-                return db.Users.ToList();
-            }
+            return _userRepository.GetUsers();
         }
     }
 }
