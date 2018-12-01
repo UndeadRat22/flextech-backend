@@ -13,10 +13,10 @@ namespace ShopSnapWebApi.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ShopSnapDatabaseContext : DbContext
+    public partial class Entities : DbContext
     {
-        public ShopSnapDatabaseContext()
-            : base("name=ShopSnapDatabaseContext")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
