@@ -235,6 +235,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Extentions\ArrayExtentionMethods.cs" />
+    <Compile Include="Interfaces\IUserSpendingsRepository.cs" />
     <Compile Include="Models\OcrResponse.cs" />
     <Compile Include="Models\FoundItem.cs" />
     <Compile Include="Models\Receipt.cs">
@@ -269,6 +270,7 @@
     <Compile Include="Repositories\ReceiptItemRepository.cs" />
     <Compile Include="Repositories\ReceiptRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Repositories\UserSpendingsRepository.cs" />
     <Compile Include="Services\Abstract\IReceiptService.cs" />
     <Compile Include="Services\ReceiptOctApiService.cs" />
     <Compile Include="Services\ReceiptParseService.cs" />
