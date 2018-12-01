@@ -14,7 +14,7 @@ namespace ShopSnapWebApi.Repositories
         {
             using (var db = new ShopSnapDatabaseContext())
             {
-                var userReceipts = db.Receipts.Include("ReceiptItems").Where(r => r.UserID == userID).ToList();
+                var userReceipts = db.Receipts.Include("ReceiptItems").Include("Store").Where(r => r.UserID == userID).ToList();
 
                 var returnItemList = new List<ReceiptItem>();
 

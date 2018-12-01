@@ -223,6 +223,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="DataMaps\CorruptedWords.cs" />
     <Compile Include="Interfaces\IReceiptRepository.cs" />
     <Compile Include="Interfaces\IReceiptItemRepository.cs" />
@@ -249,15 +250,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ShopSnapDataModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ShopSnapDataModel.Designer.cs">
-      <DependentUpon>ShopSnapDataModel.edmx</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Models\ShopSnapDataModel1.cs">
+    <Compile Include="Models\ShopSnapDataModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ShopSnapDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShopSnapDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShopSnapDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Store.cs">
       <DependentUpon>ShopSnapDataModel.tt</DependentUpon>
@@ -290,7 +291,7 @@
     <Content Include="Models\ShopSnapDataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ShopSnapDataModel.edmx</DependentUpon>
-      <LastGenOutput>ShopSnapDataModel1.cs</LastGenOutput>
+      <LastGenOutput>ShopSnapDataModel.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
