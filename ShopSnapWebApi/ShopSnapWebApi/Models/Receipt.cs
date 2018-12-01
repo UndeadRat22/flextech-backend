@@ -14,9 +14,18 @@ namespace ShopSnapWebApi.Models
     
     public partial class Receipt
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Receipt()
+        {
+            this.ReceiptItems = new HashSet<ReceiptItem>();
+        }
+    
         public int ID { get; set; }
         public Nullable<int> StoreID { get; set; }
         public string Date { get; set; }
         public Nullable<int> UserID { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ReceiptItem> ReceiptItems { get; set; }
     }
 }

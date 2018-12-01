@@ -193,6 +193,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReceiptController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -205,20 +206,22 @@
     <Compile Include="Models\ReceiptItem.cs">
       <DependentUpon>ShopSnapDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ShopSnapCodeFirstDataModel.cs" />
     <Compile Include="Models\ShopSnapDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ShopSnapDataModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ShopSnapDataModel.cs">
+    <Compile Include="Models\ShopSnapDataModel.cs" />
+    <Compile Include="Models\ShopSnapDataModel.Designer.cs">
+      <DependentUpon>ShopSnapDataModel.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Models\ShopSnapDataModel1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ShopSnapDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ShopSnapDataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ShopSnapDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Store.cs">
       <DependentUpon>ShopSnapDataModel.tt</DependentUpon>
@@ -246,7 +249,7 @@
     <Content Include="Models\ShopSnapDataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ShopSnapDataModel.edmx</DependentUpon>
-      <LastGenOutput>ShopSnapDataModel.cs</LastGenOutput>
+      <LastGenOutput>ShopSnapDataModel1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
