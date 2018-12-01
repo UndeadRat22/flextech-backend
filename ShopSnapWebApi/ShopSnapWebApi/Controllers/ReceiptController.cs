@@ -5,16 +5,18 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Data.Entity;
+
 
 namespace ShopSnapWebApi.Controllers
 {
-    public class UserController : ApiController
+    public class ReceiptController : ApiController
     {
-        public List<User> GetUsers()
+        public List<Receipt> GetReceipts()
         {
-            using(var db = new ShopSnapCodeFirstDataModel())
+            using (var db = new ShopSnapCodeFirstDataModel())
             {
-                return db.Users.ToList();
+                return db.Receipts.Include("ReceiptItems").ToList();
             }
         }
     }
