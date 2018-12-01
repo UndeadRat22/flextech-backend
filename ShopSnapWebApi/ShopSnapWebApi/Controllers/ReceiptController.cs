@@ -13,22 +13,28 @@ namespace ShopSnapWebApi.Controllers
 {
     public class ReceiptController : ApiController
     {
-        public IReceiptRepository _receiptRepsitory;
+        public IReceiptRepository _receiptRepository;
 
         public ReceiptController(IReceiptRepository receiptRepsitory)
         {
-            _receiptRepsitory = receiptRepsitory;
+            _receiptRepository = receiptRepsitory;
         }
 
         public List<Receipt> GetReceipts()
         {
-            return _receiptRepsitory.GetReceipts();
+            return _receiptRepository.GetReceipts();
         }
 
         public List<Receipt> GetReceiptsByUserID(int userID)
         {
-            return _receiptRepsitory.GetReceiptsByUserID(userID);
+            return _receiptRepository.GetReceiptsByUserID(userID);
         }
 
+        [HttpPost]
+        [ActionName("Create")]
+        public void CreateReceipt([FromBody]Receipt receipt)
+        {
+            _receiptRepository.CreateReceipt(receipt);
+        }
     }
 }

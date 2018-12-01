@@ -24,5 +24,14 @@ namespace ShopSnapWebApi.Repositories
                 return db.Receipts.Include("ReceiptItems").Where(r => r.UserID == userID).ToList();
             }
         }
+
+        public void CreateReceipt(Receipt receipt)
+        {
+            using(var db = new ShopSnapDatabaseContext())
+            {
+                db.Receipts.Add(receipt);
+                db.SaveChanges();
+            }
+        }
     }
 }
