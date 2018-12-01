@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace ShopSnapWebApi.Interfaces
 {
-    interface IUserSpendingsRepository
+    public interface IUserSpendingsRepository
     {
-        decimal GetUserMonthSpendings(int userID);
+        decimal GetUserAllSpendings(int userID);
     }
 }

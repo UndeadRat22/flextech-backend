@@ -11,7 +11,7 @@ namespace ShopSnapWebApi.Repositories
     public class UserSpendingsRepository : IUserSpendingsRepository
     {
 
-        public decimal GetUserMonthSpendings(int userID)
+        public decimal GetUserAllSpendings(int userID)
         {
             decimal allSpendings = 0;
             using (var db = new ShopSnapDatabaseContext())
@@ -26,18 +26,7 @@ namespace ShopSnapWebApi.Repositories
 
                     foreach (var item in receiptItemList)
                     {
-                        //allSpendings += item.Quantity;
-                        returnItemList.Add(
-                            new ReceiptItem()
-                            {
-                                ID = item.ID,
-                                Name = item.Name,
-                                Price = item.Price,
-                                Quantity = item.Quantity,
-                                ReceiptID = item.ReceiptID
-                            });
-                        
-
+                        allSpendings += (decimal)item.Quantity * (decimal)item.Price;
                     }
                 }
 
