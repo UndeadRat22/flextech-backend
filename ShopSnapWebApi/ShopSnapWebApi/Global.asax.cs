@@ -18,6 +18,7 @@ namespace ShopSnapWebApi
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            UnityConfig.RegisterComponents();
 
             HttpConfiguration config = GlobalConfiguration.Configuration;
 
