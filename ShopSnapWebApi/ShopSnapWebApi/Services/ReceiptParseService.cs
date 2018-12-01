@@ -1,16 +1,22 @@
 ﻿using ShopSnapWebApi.Infrastructure.Extentions;
 using ShopSnapWebApi.Models;
+using ShopSnapWebApi.Services.Abstract;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Text.RegularExpressions;
 
 namespace ShopSnapWebApi.Services
 {
-    public class ReceiptParseService
+    public class ReceiptParseService : IReceiptService
     {
         private const string _pvmLinePattern = "P\x20*V\x20*M";
         private const string _itemListEndPattern = "Prekiautojo";
         private const string _quoteLinePattern = "\\r\\n[A-ZÉ0-9 ]*\\t*(, ,)[A-ZÉ0-9 ]*\\t[0-9, ]*A";
+
+        public List<FoundItem> GetItemList(OcrResponse rawResponse)
+        {
+            return null;
+        }
+
         public string[] GetReceiptItems(OcrResponse response)
         {
             List<FoundItem> items = new List<FoundItem>();
