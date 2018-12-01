@@ -14,6 +14,8 @@ namespace ShopSnapWebApi.Services
         private const string _pvmLinePattern = "P\x20*V\x20*M";
         private const string _itemListEndPattern = "Prekiautojo";
         private const string _mainLinePattern = @"([A-ZÉa-z0-9\x20]*).*(\d+,\d\d)";
+        private const string _kgLinePattern = @"\t(.*)kg\x20*x(.*)EUR.*\t";
+        private const string _wordPattern = @"\x20[A-Z]*[0-9]*[A-Z]";
 
         public List<FoundItem> GetItemList(OcrResponse rawResponse)
         {
@@ -27,6 +29,7 @@ namespace ShopSnapWebApi.Services
                 if (prev == null)
                 {
                     prev = GetItemFromLine(line);
+                    AddPricePerKgFromLine(line, ref prev);
                     continue;
                 }
                 AddDiscountFromLine(line, ref prev);
@@ -49,16 +52,38 @@ namespace ShopSnapWebApi.Services
             if (!currMatch.Success)
                 return null;
             string name = currMatch.Groups[1].Value;
-            Debug.WriteLine(name);
+
+            if (Regex.IsMatch(name, _wordPattern))
+                name = name.ReplaceCorruptedValues(CorruptedWords.letters);
+
             string price = currMatch.Groups[2].Value;
-            Debug.WriteLine(price);
             FoundItem item = new FoundItem()
             {
                 Name = name,
-                PriceInCents = price.ConvertToCents()
+                PriceInCents = price.ConvertStringDecimalToInt()
             };
             return item;
         }
+
+        private void AddPricePerKgFromLine(string line, ref FoundItem item)
+        {
+            Match match = Regex.Match(line, _kgLinePattern);
+            if (match.Success)
+            {
+                var amount = match.Groups[1].Value
+                    .RemoveWhitespace()
+                    .ReplaceCorruptedValues(CorruptedWords.numbers)
+                    .ConvertStringDecimalToInt(1000, '.');
+                var price = match.Groups[2].Value
+                    .RemoveWhitespace()
+                    .ReplaceCorruptedValues(CorruptedWords.numbers)
+                    .ConvertStringDecimalToInt(100, '.');
+                item.PriceInCents = price;
+                item.Amount = amount;
+                item.PayingForKilo = true;
+            }
+        }
+
         private void AddDiscountFromLine(string line, ref FoundItem item)
         {
             if (line == null || !line.Contains("NUOLAIDA") || item == null)
@@ -66,7 +91,7 @@ namespace ShopSnapWebApi.Services
             Match nextMatch = Regex.Match(line, _mainLinePattern);
             if (!nextMatch.Success)
                 return;
-            item.DiscountInCents = nextMatch.Groups[2].Value.ConvertToCents();
+            item.DiscountInCents = nextMatch.Groups[2].Value.ConvertStringDecimalToInt();
         }
 
         public string[] GetReceiptItemStrings(OcrResponse response)
@@ -76,7 +101,7 @@ namespace ShopSnapWebApi.Services
             foreach (var result in response.ParsedResults)
             {
                 text = result.ParsedText;
-                text = ReplaceCorruptedValues(text);
+                text = text.ReplaceCorruptedValues(CorruptedWords.words);
                 lines = text.Split(new string[] { "\n", "\r" }, System.StringSplitOptions.RemoveEmptyEntries);
             }
             lines = GetItemStringArray(lines);
@@ -117,13 +142,5 @@ namespace ShopSnapWebApi.Services
             return index;
         }
 
-        private string ReplaceCorruptedValues(string originalString)
-        {
-            foreach(var corruptedPair in CorruptedWords.words) {
-                originalString = originalString.Replace(corruptedPair.Key, corruptedPair.Value);
-            }
-
-            return originalString;
-        }
     }
 }
