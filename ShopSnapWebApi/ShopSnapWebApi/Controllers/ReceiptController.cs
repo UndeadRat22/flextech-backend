@@ -14,7 +14,7 @@ namespace ShopSnapWebApi.Controllers
     {
         public List<Receipt> GetReceipts()
         {
-            using (var db = new ShopSnapCodeFirstDatabaseContext())
+            using (var db = new ShopSnapDatabaseContext())
             {
                 return db.Receipts.Include("ReceiptItems").ToList();
             }

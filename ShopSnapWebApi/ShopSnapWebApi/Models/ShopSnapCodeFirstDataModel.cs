@@ -5,10 +5,10 @@ namespace ShopSnapWebApi.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class ShopSnapCodeFirstDatabaseContext : DbContext
+    public partial class ShopSnapDatabaseContext : DbContext
     {
-        public ShopSnapCodeFirstDatabaseContext()
-            : base("name=ShopSnapCodeFirstDatabaseContext")
+        public ShopSnapDatabaseContext()
+            : base("name=ShopSnapDatabaseContext")
         {
             this.Configuration.LazyLoadingEnabled = false;
         }
