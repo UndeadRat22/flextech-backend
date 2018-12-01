@@ -5,9 +5,9 @@ namespace ShopSnapWebApi.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class ShopSnapCodeFirstDataModel : DbContext
+    public partial class ShopSnapCodeFirstDatabaseContext : DbContext
     {
-        public ShopSnapCodeFirstDataModel()
+        public ShopSnapCodeFirstDatabaseContext()
             : base("name=ShopSnapCodeFirstDatabaseContext")
         {
             this.Configuration.LazyLoadingEnabled = false;

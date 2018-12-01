@@ -12,7 +12,7 @@ namespace ShopSnapWebApi.Controllers
     {
         public List<User> GetUsers()
         {
-            using(var db = new ShopSnapCodeFirstDataModel())
+            using(var db = new ShopSnapCodeFirstDatabaseContext())
             {
                 return db.Users.ToList();
             }

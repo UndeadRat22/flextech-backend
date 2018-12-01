@@ -212,7 +212,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ShopSnapDataModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ShopSnapDataModel.cs" />
     <Compile Include="Models\ShopSnapDataModel.Designer.cs">
       <DependentUpon>ShopSnapDataModel.edmx</DependentUpon>
       <AutoGen>True</AutoGen>
