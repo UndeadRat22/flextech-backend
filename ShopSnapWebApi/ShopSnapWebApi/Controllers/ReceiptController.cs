@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopSnapWebApi.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,23 +10,23 @@ namespace ShopSnapWebApi.Controllers
 {
     public class ReceiptController : ApiController
     {
-        //public List<ReceiptWithItems> GetUserReceiptHistory(int userID)
-        //{
-        //    List<ReceiptWithItems> userReceiptHistory = new List<ReceiptWithItems>();
-        //    using (var db = new ShopSnapDatabaseContext())
-        //    {
-        //        var AllUserReceipts = db.Receipts.Where(r => r.UserID == userID).ToList();
+        public List<ReceiptWithItems> GetUserReceiptHistory(int userID)
+        {
+            List<ReceiptWithItems> userReceiptHistory = new List<ReceiptWithItems>();
+            using (var db = new ShopSnapDatabaseContext())
+            {
+                var AllUserReceipts = db.Receipts.Where(r => r.UserID == userID).ToList();
 
-        //        foreach (var receipt in AllUserReceipts)
-        //        {
-        //            var userReceiptWithItems = new ReceiptWithItems();
-        //            userReceiptWithItems.UserReceipt = receipt;
-        //            userReceiptWithItems.UserReceiptItems = db.ReceiptItems.Where(i => i.ReceiptID == receipt.ID).ToList();
-        //            userReceiptHistory.Add(userReceiptWithItems);
-        //        }
+                foreach (var receipt in AllUserReceipts)
+                {
+                    var userReceiptWithItems = new ReceiptWithItems();
+                    userReceiptWithItems.UserReceipt = receipt;
+                    userReceiptWithItems.UserReceiptItems = db.ReceiptItems.Where(i => i.ReceiptID == receipt.ID).ToList();
+                    userReceiptHistory.Add(userReceiptWithItems);
+                }
 
-        //    }
-        //    return userReceiptHistory;
-        //}
+            }
+            return userReceiptHistory;
+        }
     }
 }
