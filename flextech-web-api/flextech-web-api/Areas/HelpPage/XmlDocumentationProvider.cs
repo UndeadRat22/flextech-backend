@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using flextech_web_api.Areas.HelpPage.ModelDescriptions;
+using shopsnap.Areas.HelpPage.ModelDescriptions;
 
-namespace flextech_web_api.Areas.HelpPage
+namespace shopsnap.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.

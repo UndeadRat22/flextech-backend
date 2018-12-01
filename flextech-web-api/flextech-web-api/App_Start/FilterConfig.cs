@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace flextech_web_api
+namespace shopsnap
 {
     public class FilterConfig
     {

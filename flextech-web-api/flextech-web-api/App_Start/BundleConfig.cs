@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace flextech_web_api
+namespace shopsnap
 {
     public class BundleConfig
     {

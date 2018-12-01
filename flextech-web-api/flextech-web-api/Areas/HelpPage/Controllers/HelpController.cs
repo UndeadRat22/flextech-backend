@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using flextech_web_api.Areas.HelpPage.ModelDescriptions;
-using flextech_web_api.Areas.HelpPage.Models;
+using shopsnap.Areas.HelpPage.ModelDescriptions;
+using shopsnap.Areas.HelpPage.Models;
 
-namespace flextech_web_api.Areas.HelpPage.Controllers
+namespace shopsnap.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

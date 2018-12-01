@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace flextech_web_api.Models
+namespace ShopSnapWebApi.Models
 {
     using System;
     using System.Collections.Generic;
@@ -15,7 +15,7 @@ namespace flextech_web_api.Models
     public partial class ReceiptItem
     {
         public int ID { get; set; }
-        public Nullable<int> Name { get; set; }
+        public string Name { get; set; }
         public string Quantity { get; set; }
         public Nullable<decimal> Price { get; set; }
         public Nullable<int> ReceiptID { get; set; }

@@ -11,7 +11,7 @@ using System.Web.Http.Description;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 
-namespace flextech_web_api.Areas.HelpPage.ModelDescriptions
+namespace shopsnap.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Generates model descriptions for given types.

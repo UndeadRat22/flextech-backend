@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace flextech_web_api.Models
+namespace ShopSnapWebApi.Models
 {
     using System;
     using System.Collections.Generic;

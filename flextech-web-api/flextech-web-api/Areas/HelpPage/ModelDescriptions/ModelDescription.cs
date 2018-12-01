@@ -1,6 +1,6 @@
 using System;
 
-namespace flextech_web_api.Areas.HelpPage.ModelDescriptions
+namespace shopsnap.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

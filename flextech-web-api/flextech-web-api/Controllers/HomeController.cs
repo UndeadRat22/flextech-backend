@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace flextech_web_api.Controllers
+namespace shopsnap.Controllers
 {
     public class HomeController : Controller
     {

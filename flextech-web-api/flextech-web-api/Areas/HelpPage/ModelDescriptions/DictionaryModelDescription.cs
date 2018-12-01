@@ -1,4 +1,4 @@
-namespace flextech_web_api.Areas.HelpPage.ModelDescriptions
+namespace shopsnap.Areas.HelpPage.ModelDescriptions
 {
     public class DictionaryModelDescription : KeyValuePairModelDescription
     {

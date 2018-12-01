@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace flextech_web_api
+namespace shopsnap
 {
     public class WebApiApplication : System.Web.HttpApplication
     {

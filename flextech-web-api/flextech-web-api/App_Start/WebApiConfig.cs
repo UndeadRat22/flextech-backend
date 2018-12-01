@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace flextech_web_api
+namespace shopsnap
 {
     public static class WebApiConfig
     {

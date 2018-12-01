@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using flextech_web_api.Areas.HelpPage.ModelDescriptions;
-using flextech_web_api.Areas.HelpPage.Models;
+using shopsnap.Areas.HelpPage.ModelDescriptions;
+using shopsnap.Areas.HelpPage.Models;
 
-namespace flextech_web_api.Areas.HelpPage
+namespace shopsnap.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

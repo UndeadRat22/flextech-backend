@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "flextech-web-api", "flextech-web-api\flextech-web-api.csproj", "{15448EDF-8DAF-4017-B93E-18FAC5C18AE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSnapWebApi", "flextech-web-api\ShopSnapWebApi.csproj", "{15448EDF-8DAF-4017-B93E-18FAC5C18AE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

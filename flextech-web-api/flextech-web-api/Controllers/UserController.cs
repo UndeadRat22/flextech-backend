@@ -1,4 +1,5 @@
-﻿using flextech_web_api.Models;
+﻿using shopsnap.Models;
+using ShopSnapWebApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,13 +7,13 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace flextech_web_api.Controllers
+namespace shopsnap.Controllers
 {
     public class UserController : ApiController
     {
         public List<User> Get()
         {
-            using(FlextechDatabaseContext db = new FlextechDatabaseContext())
+            using(var db = new ShopSnapDatabaseContext())
             {
                 return db.Users.ToList();
             }

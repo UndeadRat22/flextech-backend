@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace flextech_web_api.Models
+namespace ShopSnapWebApi.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FlextechDatabaseContext : DbContext
+    public partial class ShopSnapDatabaseContext : DbContext
     {
-        public FlextechDatabaseContext()
-            : base("name=FlextechDatabaseContext")
+        public ShopSnapDatabaseContext()
+            : base("name=ShopSnapDatabaseContext")
         {
         }
     
@@ -26,8 +26,8 @@ namespace flextech_web_api.Models
         }
     
         public virtual DbSet<ReceiptItem> ReceiptItems { get; set; }
+        public virtual DbSet<Receipt> Receipts { get; set; }
         public virtual DbSet<Store> Stores { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Receipt> Receipts { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace flextech_web_api.Areas.HelpPage.ModelDescriptions
+namespace shopsnap.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

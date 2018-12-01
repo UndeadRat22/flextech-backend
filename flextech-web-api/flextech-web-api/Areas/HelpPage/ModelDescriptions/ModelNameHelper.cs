@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace flextech_web_api.Areas.HelpPage.ModelDescriptions
+namespace shopsnap.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {
