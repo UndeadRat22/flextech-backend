@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace shopsnap.Areas.HelpPage
+namespace ShopSnap.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

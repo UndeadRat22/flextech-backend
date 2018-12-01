@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace shopsnap.Areas.HelpPage.ModelDescriptions
+namespace ShopSnap.Areas.HelpPage.ModelDescriptions
 {
     public class ComplexTypeModelDescription : ModelDescription
     {

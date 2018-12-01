@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace shopsnap
+namespace ShopSnap
 {
     public class BundleConfig
     {

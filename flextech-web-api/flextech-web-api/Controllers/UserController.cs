@@ -1,4 +1,4 @@
-﻿using shopsnap.Models;
+﻿using ShopSnap.Models;
 using ShopSnapWebApi.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace shopsnap.Controllers
+namespace ShopSnap.Controllers
 {
     public class UserController : ApiController
     {

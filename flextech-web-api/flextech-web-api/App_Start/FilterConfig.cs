@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace shopsnap
+namespace ShopSnap
 {
     public class FilterConfig
     {

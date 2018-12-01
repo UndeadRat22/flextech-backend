@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using shopsnap.Areas.HelpPage.ModelDescriptions;
-using shopsnap.Areas.HelpPage.Models;
+using ShopSnap.Areas.HelpPage.ModelDescriptions;
+using ShopSnap.Areas.HelpPage.Models;
 
-namespace shopsnap.Areas.HelpPage.Controllers
+namespace ShopSnap.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

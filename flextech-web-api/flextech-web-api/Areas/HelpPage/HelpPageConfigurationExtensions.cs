@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using shopsnap.Areas.HelpPage.ModelDescriptions;
-using shopsnap.Areas.HelpPage.Models;
+using ShopSnap.Areas.HelpPage.ModelDescriptions;
+using ShopSnap.Areas.HelpPage.Models;
 
-namespace shopsnap.Areas.HelpPage
+namespace ShopSnap.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

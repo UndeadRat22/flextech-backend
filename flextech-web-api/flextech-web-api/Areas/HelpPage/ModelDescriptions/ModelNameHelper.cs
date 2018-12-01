@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace shopsnap.Areas.HelpPage.ModelDescriptions
+namespace ShopSnap.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

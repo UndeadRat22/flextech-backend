@@ -1,6 +1,6 @@
 using System;
 
-namespace shopsnap.Areas.HelpPage.ModelDescriptions
+namespace ShopSnap.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.
