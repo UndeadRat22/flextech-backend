@@ -30,6 +30,7 @@
           <Property Name="Quantity" Type="int" />
           <Property Name="Price" Type="decimal" Precision="5" Scale="2" />
           <Property Name="ReceiptID" Type="int" Nullable="false" />
+          <Property Name="PayingForKilo" Type="bit" />
         </EntityType>
         <EntityType Name="Receipts">
           <Key>
@@ -125,6 +126,7 @@
           <Property Name="Price" Type="Decimal" Precision="5" Scale="2" />
           <Property Name="ReceiptID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Receipt" Relationship="Self.FK_ReceiptItems_Receipts" FromRole="ReceiptItems" ToRole="Receipts" />
+          <Property Name="PayingForKilo" Type="Boolean" />
         </EntityType>
         <EntityType Name="Receipt">
           <Key>
@@ -235,6 +237,7 @@
           <EntitySetMapping Name="ReceiptItems">
             <EntityTypeMapping TypeName="ShopSnapDataModel.ReceiptItem">
               <MappingFragment StoreEntitySet="ReceiptItems">
+                <ScalarProperty Name="PayingForKilo" ColumnName="PayingForKilo" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Quantity" ColumnName="Quantity" />

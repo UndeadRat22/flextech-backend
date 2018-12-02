@@ -19,6 +19,7 @@ namespace ShopSnapWebApi.Models
         public Nullable<int> Quantity { get; set; }
         public Nullable<decimal> Price { get; set; }
         public int ReceiptID { get; set; }
+        public Nullable<bool> PayingForKilo { get; set; }
     
         public virtual Receipt Receipt { get; set; }
     }

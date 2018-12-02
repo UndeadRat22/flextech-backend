@@ -6,8 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Data.Entity;
-
-
+using ShopSnapWebApi.Repositories;
 
 namespace ShopSnapWebApi.Controllers
 {
@@ -32,7 +31,7 @@ namespace ShopSnapWebApi.Controllers
 
         [HttpPost]
         [ActionName("Create")]
-        public void CreateReceipt([FromBody]Receipt receipt)
+        public void CreateReceipt([FromBody]ReceiptWithFoundItems receipt)
         {
             _receiptRepository.CreateReceipt(receipt);
         }
