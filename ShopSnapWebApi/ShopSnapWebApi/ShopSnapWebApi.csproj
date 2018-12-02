@@ -278,6 +278,7 @@
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\SpendingsController.cs" />
     <Compile Include="DataMaps\CorruptedWords.cs" />
+    <Compile Include="DataMaps\StaticReplyList.cs" />
     <Compile Include="Infrastructure\Extentions\StringExtentions.cs" />
     <Compile Include="Interfaces\IReceiptRepository.cs" />
     <Compile Include="Interfaces\IReceiptItemRepository.cs" />
