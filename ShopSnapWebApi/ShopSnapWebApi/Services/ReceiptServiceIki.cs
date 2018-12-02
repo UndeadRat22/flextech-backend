@@ -65,7 +65,11 @@ namespace ShopSnapWebApi.Services
 
             if (Regex.IsMatch(name, _wordPattern))
                 name = name.ReplaceCorruptedValues(CorruptedWords.letters);
-
+            Product result = _recognitionService.Recognize(name);
+            if (result != null)
+            {
+                name = result.Name;
+            }
             string price = currMatch.Groups[2].Value;
             FoundItem item = new FoundItem()
             {
