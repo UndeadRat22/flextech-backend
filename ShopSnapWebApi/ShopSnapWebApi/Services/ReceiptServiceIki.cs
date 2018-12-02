@@ -74,7 +74,8 @@ namespace ShopSnapWebApi.Services
             FoundItem item = new FoundItem()
             {
                 Name = name,
-                PriceInCents = price.ConvertStringDecimalToInt()
+                PriceInCents = price.ConvertStringDecimalToInt(),
+                Amount = 1
             };
             return item;
         }
