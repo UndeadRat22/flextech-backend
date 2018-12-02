@@ -48,16 +48,27 @@ namespace ShopSnapWebApi.Repositories
 
             var receiptItemList = new List<ReceiptItem>();
 
-            foreach(var foundItem in receiptWithFoundItems.ReceiptFoundItems)
+            foreach(var foundItem in receiptWithFoundItems.ReceiptFoundItemList)
             {
+                int priceInCents = foundItem.PriceInCents - foundItem.DiscountInCents;
+                decimal priceInEuro = 0;
+                if(priceInCents != 0)
+                {
+                    priceInEuro = priceInCents / 100;
+                }
+
                 var receiptItem = new ReceiptItem
                 {
                     Name = foundItem.Name,
+                    PayingForKilo = foundItem.PayingForKilo,
                     Quantity = foundItem.Amount,
-
+                    Price = priceInEuro,
+                    ReceiptID = receipt.ID
                 };
-                
+                receiptItemList.Add(receiptItem);
             }
+
+            receipt.ReceiptItems = receiptItemList;
 
             using(var db = new ShopSnapDatabaseContext())
             {

@@ -10,6 +10,6 @@ namespace ShopSnapWebApi.Repositories
         public string Date { get; set; }
         public int UserID { get; set; }
 
-        public List<FoundItem> ReceiptFoundItems { get; set; }
+        public List<FoundItem> ReceiptFoundItemList { get; set; }
     }
 }
