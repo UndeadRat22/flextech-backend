@@ -38,8 +38,8 @@ namespace ShopSnapWebApi.Controllers
             {
 
             }
-            if (found == null || found.Count < 3)
-                found = StaticReplyList.ItemList;
+            //if (found == null || found.Count < 3)
+            //    found = StaticReplyList.ItemList;
             return found;
         }
         
