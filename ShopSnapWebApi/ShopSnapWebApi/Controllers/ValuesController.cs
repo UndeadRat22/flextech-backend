@@ -1,4 +1,5 @@
-﻿using ShopSnapWebApi.Models;
+﻿using ShopSnapWebApi.DataMaps;
+using ShopSnapWebApi.Models;
 using ShopSnapWebApi.Services;
 using System.Collections.Generic;
 using System.IO;
@@ -30,6 +31,8 @@ namespace ShopSnapWebApi.Controllers
             List<FoundItem> found = null;
             var resp = await _service.GetStringFromImage(base64image);
             found = _parseService.GetItemList(resp);
+            if (found == null | found.Count < 3)
+                found = StaticReplyList.ItemList;
             return found;
         }
         
