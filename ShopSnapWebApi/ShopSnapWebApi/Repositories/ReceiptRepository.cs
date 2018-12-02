@@ -26,8 +26,39 @@ namespace ShopSnapWebApi.Repositories
             }
         }
 
-        public void CreateReceipt(Receipt receipt)
+        //public void CreateReceipt(Receipt receipt)
+        //{
+        //    using(var db = new ShopSnapDatabaseContext())
+        //    {
+        //        db.Receipts.Add(receipt);
+        //        db.SaveChanges();
+        //    }
+        //}
+
+        public void CreateReceipt(ReceiptWithFoundItems receiptWithFoundItems)
         {
+
+            var receipt = new Receipt
+            {
+                ID = receiptWithFoundItems.ID,
+                StoreID = receiptWithFoundItems.StoreID,
+                Date = receiptWithFoundItems.Date,
+                UserID = receiptWithFoundItems.UserID
+            };
+
+            var receiptItemList = new List<ReceiptItem>();
+
+            foreach(var foundItem in receiptWithFoundItems.ReceiptFoundItems)
+            {
+                var receiptItem = new ReceiptItem
+                {
+                    Name = foundItem.Name,
+                    Quantity = foundItem.Amount,
+
+                };
+                
+            }
+
             using(var db = new ShopSnapDatabaseContext())
             {
                 db.Receipts.Add(receipt);
