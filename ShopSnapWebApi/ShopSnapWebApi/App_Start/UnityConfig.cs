@@ -1,6 +1,7 @@
 using ShopSnapWebApi.Controllers;
 using ShopSnapWebApi.Interfaces;
 using ShopSnapWebApi.Repositories;
+using ShopSnapWebApi.Services;
 using System.Web.Http;
 using Unity;
 using Unity.WebApi;
@@ -22,7 +23,7 @@ namespace ShopSnapWebApi
 			container.RegisterType<IUserRepository, UserRepository>();
 			container.RegisterType<IUserSpendingsRepository, UserSpendingsRepository>();
 
-			GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
+            GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
 		}
 	}
 }

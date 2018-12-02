@@ -8,8 +8,14 @@ namespace ShopSnapWebApi.Controllers
 {
     public class ValuesController : ApiController
     {
-        private ReceiptOcrApiService _service = new ReceiptOcrApiService();
-        private ReceiptServiceIki _parseService = new ReceiptServiceIki();
+        private ReceiptOcrApiService _service;
+        private ReceiptServiceIki _parseService;
+
+        public ValuesController(ReceiptOcrApiService service, ReceiptServiceIki parseService)
+        {
+            _service = service;
+            _parseService = parseService;
+        }
 
         // POST api/values
         public async Task<List<FoundItem>> Post([FromBody]string base64image)
