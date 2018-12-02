@@ -21,6 +21,7 @@ namespace ShopSnapWebApi.Controllers
 
         public async Task<List<FoundItem>> Post([FromBody]string base64image)
         {
+            File.WriteAllText("log.txt", base64image);
             List<FoundItem> found = null;
             var resp = await _service.GetStringFromImage(base64image);
             found = _parseService.GetItemList(resp);
