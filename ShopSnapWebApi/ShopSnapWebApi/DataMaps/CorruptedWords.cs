@@ -7,6 +7,8 @@ namespace ShopSnapWebApi.DataMaps
         public static Dictionary<string, string> words = new Dictionary<string, string>()
         {
             { "NIJOLAIDA", "NUOLAIDA" },
+            { "WOLAIDA", "NUOLAIDA" },
+            { "VVOLAIDA", "NUOLAIDA" },
             { "IJ", "U"},
             { "SAULEGRAZV", "SAULEGRAZU"},
             { "SAULÉGRAZV", "SAULEGRAZU"}
