@@ -281,6 +281,7 @@
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Repositories\UserSpendingsRepository.cs" />
     <Compile Include="Services\Abstract\IReceiptService.cs" />
+    <Compile Include="Services\ProductRecognitionService.cs" />
     <Compile Include="Services\ReceiptOctApiService.cs" />
     <Compile Include="Services\ReceiptServiceIki.cs" />
   </ItemGroup>
