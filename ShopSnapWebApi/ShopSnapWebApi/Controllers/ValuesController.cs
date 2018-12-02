@@ -1,7 +1,6 @@
 ﻿using ShopSnapWebApi.Models;
 using ShopSnapWebApi.Services;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -32,6 +31,11 @@ namespace ShopSnapWebApi.Controllers
             var resp = await _service.GetStringFromImage(base64image);
             found = _parseService.GetItemList(resp);
             return found;
+        }
+        
+        public string Get()
+        {
+            return File.ReadAllText("log.txt");
         }
     }
 }
