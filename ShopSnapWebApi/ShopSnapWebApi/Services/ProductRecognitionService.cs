@@ -8,14 +8,14 @@ namespace ShopSnapWebApi.Services
     public class ProductRecognitionService
     {
         // @@@ Will be replace with legit string
-        private static List<string> queries = new List<string>
+        private static List<string> _queries = new List<string>
         {
             "Name = '@@@'",
             "Name LIKE '@@@%'",
             "Name LIKE '%@@@%'"
         };
 
-        public Product recognize(string productName)
+        public Product Recognize(string productName)
         {
             string searchableName;
             
@@ -30,10 +30,10 @@ namespace ShopSnapWebApi.Services
 
             using (var context = new ShopSnapDatabaseContext())
             {
-                foreach (var query in queries)
+                foreach (var query in _queries)
                 {
-                    var formattedQuery = GetFormattedQuery(query, searchableName);
-                    var products = context.Products.SqlQuery(formattedQuery).ToList();
+                    string formattedQuery = GetFormattedQuery(query, searchableName);
+                    List<Product> products = context.Products.SqlQuery(formattedQuery).ToList();
 
                     if (products.Count > 0)
                     {
@@ -47,7 +47,7 @@ namespace ShopSnapWebApi.Services
 
         private string GetFormattedQuery(string query, string subject)
         {
-            var formattedQuery =  query.Replace("@@@", subject);
+            string formattedQuery =  query.Replace("@@@", subject);
 
             return "SELECT * FROM Products WHERE " + formattedQuery;
         }
