@@ -17,6 +17,13 @@ namespace ShopSnapWebApi.Services
         private const string _kgLinePattern = @"\t(.*)kg\x20*x(.*)EUR.*\t";
         private const string _wordPattern = @"\x20[A-Z]*[0-9]*[A-Z]";
 
+        ProductRecognitionService _recognitionService;
+
+        public ReceiptServiceIki(ProductRecognitionService recognitionService)
+        {
+            _recognitionService = recognitionService;
+        }
+
         public List<FoundItem> GetItemList(OcrResponse rawResponse)
         {
             string[] arr = GetReceiptItemStrings(rawResponse);
