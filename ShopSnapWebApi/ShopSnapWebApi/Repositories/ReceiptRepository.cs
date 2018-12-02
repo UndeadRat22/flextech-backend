@@ -54,7 +54,7 @@ namespace ShopSnapWebApi.Repositories
                 decimal priceInEuro = 0;
                 if(priceInCents != 0)
                 {
-                    priceInEuro = priceInCents / 100;
+                    priceInEuro = (decimal) priceInCents / 100;
                 }
 
                 var receiptItem = new ReceiptItem
