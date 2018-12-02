@@ -27,6 +27,7 @@ namespace ShopSnapWebApi.Services
         public List<FoundItem> GetItemList(OcrResponse rawResponse)
         {
             string[] arr = GetReceiptItemStrings(rawResponse);
+
             List<FoundItem> found = new List<FoundItem>();
             if (arr == null || arr.Length == 0)
                 return found;
@@ -36,7 +37,8 @@ namespace ShopSnapWebApi.Services
                 if (prev == null)
                 {
                     prev = GetItemFromLine(line);
-                    AddPricePerKgFromLine(line, ref prev);
+                    if (prev != null)
+                        AddPricePerKgFromLine(line, ref prev);
                     continue;
                 }
                 AddDiscountFromLine(line, ref prev);

@@ -1,6 +1,7 @@
 ﻿using ShopSnapWebApi.Models;
 using ShopSnapWebApi.Services;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -21,14 +22,8 @@ namespace ShopSnapWebApi.Controllers
         public async Task<List<FoundItem>> Post([FromBody]string base64image)
         {
             List<FoundItem> found = null;
-            //using (StreamWriter writer = new StreamWriter("log.txt"))
-            //{
-                //writer.WriteLine("Started Parsing");
-
-                var resp = await _service.GetStringFromImage(base64image);
-                found = _parseService.GetItemList(resp);
-            //writer.WriteLine(found);
-            //}
+            var resp = await _service.GetStringFromImage(base64image);
+            found = _parseService.GetItemList(resp);
             return found;
         }
     }
