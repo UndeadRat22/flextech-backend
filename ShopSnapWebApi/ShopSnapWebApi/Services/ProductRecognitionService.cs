@@ -15,7 +15,7 @@ namespace ShopSnapWebApi.Services
             "Name LIKE '%@@@%'"
         };
 
-        public static Product recognize(string productName)
+        public Product recognize(string productName)
         {
             string searchableName;
             
@@ -32,9 +32,7 @@ namespace ShopSnapWebApi.Services
             {
                 foreach (var query in queries)
                 {
-                    var formattedQuery = getFormattedQuery(query, searchableName);
-                    Debug.WriteLine(formattedQuery);
-                    System.Console.WriteLine(formattedQuery);
+                    var formattedQuery = GetFormattedQuery(query, searchableName);
                     var products = context.Products.SqlQuery(formattedQuery).ToList();
 
                     if (products.Count > 0)
@@ -47,7 +45,7 @@ namespace ShopSnapWebApi.Services
             return null;
         }
 
-        private static string getFormattedQuery(string query, string subject)
+        private string GetFormattedQuery(string query, string subject)
         {
             var formattedQuery =  query.Replace("@@@", subject);
 
