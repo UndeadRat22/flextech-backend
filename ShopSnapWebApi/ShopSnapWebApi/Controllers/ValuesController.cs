@@ -33,9 +33,9 @@ namespace ShopSnapWebApi.Controllers
             return found;
         }
         
-        public string Get()
-        {
-            return File.ReadAllText("log.txt");
-        }
+        //public string Get()
+        //{
+        //    return File.ReadAllText("log.txt");
+        //}
     }
 }
