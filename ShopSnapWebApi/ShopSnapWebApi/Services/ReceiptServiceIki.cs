@@ -13,6 +13,7 @@ namespace ShopSnapWebApi.Services
     {
         private const string _pvmLinePattern = "P\x20*V\x20*M";
         private const string _itemListEndPattern = "Prekiautojo";
+        private const string _itemListEndPattern2 = @"Prek.*\s*ID";
         private const string _mainLinePattern = @"([A-ZÉa-z0-9\x20]*).*(\d+,\d\d)";
         private const string _kgLinePattern = @"\t(.*)kg\x20*x(.*)EUR.*\t";
         private const string _wordPattern = @"\x20[A-Z]*[0-9]*[A-Z]";
@@ -132,6 +133,8 @@ namespace ShopSnapWebApi.Services
             int startIndex = GetPatternIndex(allLines, _pvmLinePattern);
             string[] temp = allLines.SubArray(startIndex + 1, allLines.Length - startIndex - 1);
             int endIndex = GetPatternIndex(temp, _itemListEndPattern);
+            if (endIndex == 0)
+                GetPatternIndex(temp, _itemListEndPattern2);
             string[] result = temp.SubArray(0, endIndex);
             return result;
         }

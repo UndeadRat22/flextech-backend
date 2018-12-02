@@ -19,9 +19,15 @@ namespace ShopSnapWebApi.Controllers
             _parseService = parseService;
         }
 
+        private static string _base64 = null;
+        public string Get()
+        {
+            return _base64;
+        }
+
         public async Task<List<FoundItem>> Post([FromBody]string base64image)
         {
-            File.WriteAllText("log.txt", base64image);
+            _base64 = base64image;
             List<FoundItem> found = null;
             var resp = await _service.GetStringFromImage(base64image);
             found = _parseService.GetItemList(resp);
